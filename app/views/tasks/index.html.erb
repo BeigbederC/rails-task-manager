@@ -1,0 +1,27 @@
+<div class="container">
+
+<div class="cards"></div>
+<%= link_to "create", tasks_new_path %>
+<hr>
+</div>
+
+<% @tasks.each do |task| %>
+  <h4><%= task.title %></h4>
+
+<div class="button -blue center"></div>
+<%= link_to "more details", task_path(task[:id]) %>
+
+<div class="button -alge center"></div>
+<%= link_to "update task", task_edit_path(task[:id]) %>
+</div>
+
+<div class="button -salmon center"></div>
+<%= link_to "delete task", task_delete_path(task[:id]),
+      method: :delete,
+      data: { confirm: "T'es sur gros?" } %>
+</div>
+
+<% end %>
+
+
+</div>
